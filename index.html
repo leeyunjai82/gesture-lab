@@ -8,11 +8,11 @@
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
 <link rel="manifest" href="manifest.webmanifest">
 <meta name="theme-color" content="#FBF7EF">
-<link rel="stylesheet" href="assets/fonts/pretendard.css?v=18">
-<link rel="stylesheet" href="css/all.min.css?v=18">
-<link rel="stylesheet" href="css/ui.css?v=18">
-<link rel="stylesheet" href="css/theme-maker.css?v=18">
-<link rel="stylesheet" href="css/app.css?v=18">
+<link rel="stylesheet" href="assets/fonts/pretendard.css?v=19">
+<link rel="stylesheet" href="css/all.min.css?v=19">
+<link rel="stylesheet" href="css/ui.css?v=19">
+<link rel="stylesheet" href="css/theme-maker.css?v=19">
+<link rel="stylesheet" href="css/app.css?v=19">
 </head>
 <body>
 
@@ -38,6 +38,7 @@
         <button class="db on" data-src="hand"><i class="fa-solid fa-hand"></i> 손</button>
         <button class="db" data-src="face"><i class="fa-solid fa-face-smile"></i> 얼굴</button>
         <button class="db" data-src="pose"><i class="fa-solid fa-person"></i> 포즈</button>
+        <button class="db" data-src="sound"><i class="fa-solid fa-microphone"></i> 소리</button>
       </div>
 
       <div class="sec2">
@@ -55,7 +56,7 @@
   </div>
 
   <div class="pan" id="panC">
-    <div class="ph"><i class="fa-solid fa-camera"></i>카메라 &amp; 예시</div>
+    <div class="ph"><i class="fa-solid fa-camera"></i><span id="panCTitle">카메라 &amp; 예시</span></div>
     <div class="pb">
       <div class="row" style="margin-bottom:10px">
         <button class="db" id="camBtn" style="flex-shrink:0"><i class="fa-solid fa-video"></i> 카메라 켜기</button>
@@ -65,9 +66,10 @@
       <div id="camBox">
         <video id="camVid" playsinline muted></video>
         <canvas id="ovCv"></canvas>
+        <canvas id="micCv" style="display:none"></canvas>
         <div id="camOff"><i class="fa-solid fa-video-slash fa-2x"></i><span>카메라가 꺼져 있어요</span></div>
       </div>
-      <div class="privnote">찍은 영상은 이 컴퓨터 밖으로 나가지 않아요</div>
+      <div class="privnote" id="privNote">찍은 영상은 이 컴퓨터 밖으로 나가지 않아요</div>
 
       <div class="selinfo" id="selInfo">종류를 골라 주세요</div>
       <button class="db go" id="capBtn" disabled><i class="fa-solid fa-camera-retro"></i> 꾹 눌러서 예시 모으기</button>
@@ -129,10 +131,10 @@
 
 <div id="toast"></div>
 
-<script src="lib/nav.js?v=18"></script>
-<script src="lib/i18n.js?v=18"></script>
-<script src="lib/tour.js?v=18"></script>
+<script src="lib/nav.js?v=19"></script>
+<script src="lib/i18n.js?v=19"></script>
+<script src="lib/tour.js?v=19"></script>
 <script src="vendor/tfjs/tf.min.js"></script>
-<script type="module" src="lib/learn.js?v=18"></script>
+<script type="module" src="lib/learn.js?v=19"></script>
 </body>
 </html>

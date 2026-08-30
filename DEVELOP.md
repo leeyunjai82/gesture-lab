@@ -41,7 +41,8 @@ css/
 lib/
   nav.js             헤더/탭/전체화면
   landmarker.js      MediaPipe 로드/전환/추론 (GPU 실패 시 CPU 폴백)
-  features.js        특징 벡터 전처리 + 내장 신호 (손 63 / 얼굴 52 / 포즈 75)
+  sound.js           마이크 + YAMNet 소리 분류 (16kHz, 250ms 주기, 521차원)
+  features.js        특징 벡터 전처리 + 내장 신호 (손 63 / 얼굴 52 / 포즈 75 / 소리 521)
   trainer.js         TF.js 분류기 학습 (Dense32-Dropout-Softmax, CPU 백엔드)
   store.js           IndexedDB 저장 + zip 내보내기/불러오기
   bgfx.js            배경 놀이 (셀피 세그멘테이션)
@@ -50,8 +51,10 @@ lib/
   learn.js / exam.js / storage_page.js   페이지 로직
 vendor/
   tasks-vision/      @mediapipe/tasks-vision wasm + vision_bundle.mjs
+  tasks-audio/       @mediapipe/tasks-audio wasm + audio_bundle.mjs (소리)
   tfjs/              @tensorflow/tfjs tf.min.js
-models/              hand / face / pose_lite .task + selfie_segmenter(배경) .tflite
+models/              hand / face / pose_lite .task + selfie_segmenter(배경) ·
+                     yamnet(소리) .tflite
 assets/fonts/        Pretendard (셀프호스팅)
 assets/img/          캐릭터·로고·앱 아이콘
 docs/                README 용 화면 캡처
@@ -61,15 +64,17 @@ design/              공용 디자인 킷 (maker-ui.css + 미리보기)
 ## 벤더 파일 갱신
 
 ```bash
-npm i @mediapipe/tasks-vision @tensorflow/tfjs
+npm i @mediapipe/tasks-vision @mediapipe/tasks-audio @tensorflow/tfjs
 cp node_modules/@mediapipe/tasks-vision/wasm/*        vendor/tasks-vision/
 cp node_modules/@mediapipe/tasks-vision/vision_bundle.mjs vendor/tasks-vision/
+cp node_modules/@mediapipe/tasks-audio/wasm/audio_wasm*   vendor/tasks-audio/
+cp node_modules/@mediapipe/tasks-audio/audio_bundle.mjs   vendor/tasks-audio/
 cp node_modules/@tensorflow/tfjs/dist/tf.min.js       vendor/tfjs/
 ```
 
 `.task`/`.tflite` 모델은 MediaPipe 공식 모델 저장소에서 받아 `models/` 에 둡니다
 (hand_landmarker, face_landmarker, pose_landmarker_lite — 포즈는 lite 고정,
-selfie_segmenter).
+selfie_segmenter, yamnet).
 `node_modules` 는 커밋하지 않고, 벤더 파일은 커밋합니다.
 
 ## 배포 (파이보 랩과 동일)

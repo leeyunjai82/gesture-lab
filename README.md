@@ -8,7 +8,7 @@ AI in about one second. Then test it, build rules with it, and play a
 step-by-step gesture game.
 
 There is nothing to install and no sign-up. Everything runs inside the
-browser — **the camera video never leaves your computer.**
+browser — **the camera video and mic audio never leave your computer.**
 
 > The screenshots below show the Korean UI. Press the **EN** button in the
 > header to switch the whole app to English.
@@ -17,7 +17,8 @@ browser — **the camera video never leaves your computer.**
 
 ![Teach room](docs/teach.png)
 
-1. Choose what the AI should watch: **hand, face, or body**.
+1. Choose what the AI should watch: **hand, face, body — or sound**
+   (sound uses the microphone: teach it claps, whistles, or spoken words).
 2. Make "kinds" — the things you want it to tell apart
    (e.g. rock / paper / scissors).
 3. Turn on the camera, pick a kind, and **hold the button** to collect
@@ -37,8 +38,8 @@ coordinates — kids can see that the AI learns from numbers, not photos.
 For each source, pick one of:
 
 - **Just watch** — no training needed. The AI already knows finger counts,
-  face distance and direction, mouth open / smiling, and hands up.
-  Great as a first hands-on demo.
+  face distance and direction, mouth open / smiling, hands up, and sounds
+  like claps and whistles. Great as a first hands-on demo.
 - **My model** — test what you taught. All class probabilities show as
   bars, and the **"How sure"** slider decides when the AI says
   *"Not sure"* instead of guessing.
@@ -87,12 +88,13 @@ PCs that reset on reboot.
 동작의 예시를 모으면, 약 1초 만에 작은 AI가 학습됩니다. 배운 모델을
 시험하고, 규칙으로 엮고, 순서 놀이로 게임도 만들 수 있습니다.
 
-설치도 가입도 없습니다. 모든 것이 브라우저 안에서 돌아가고, **찍은 영상은
-컴퓨터 밖으로 나가지 않습니다.**
+설치도 가입도 없습니다. 모든 것이 브라우저 안에서 돌아가고, **찍은 영상과
+들리는 소리는 컴퓨터 밖으로 나가지 않습니다.**
 
 ## 학습실 — 나만의 AI 모델 만들기
 
-1. 무엇을 보고 배울지 고릅니다: **손, 얼굴, 포즈**.
+1. 무엇을 보고 배울지 고릅니다: **손, 얼굴, 포즈 — 그리고 소리**
+   (소리는 마이크를 써요: 박수, 휘파람, 말소리를 가르칠 수 있어요).
 2. 맞히고 싶은 **종류**를 만듭니다 (예: 가위 / 바위 / 보).
 3. 카메라를 켜고 종류를 고른 뒤, **버튼을 꾹 눌러** 예시를 모읍니다.
    종류당 20~40장이면 충분합니다.
@@ -109,8 +111,8 @@ PCs that reset on reboot.
 소스마다 하나를 고릅니다:
 
 - **그냥 보기** — 학습 없이 바로 보여요. 손가락 개수, 얼굴 거리와 방향,
-  입 벌리기/웃기, 손 들기를 AI가 이미 알고 있어요. 첫 체험용으로
-  좋습니다.
+  입 벌리기/웃기, 손 들기, 박수·휘파람 같은 소리를 AI가 이미 알고
+  있어요. 첫 체험용으로 좋습니다.
 - **내 모델** — 학습실에서 가르친 모델을 시험해요. 종류별 확률이 막대로
   나오고, **확신 정도** 슬라이더보다 덜 확실하면 *"모르겠어요"* 라고
   답합니다.
