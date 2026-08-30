@@ -44,6 +44,9 @@ body{display:flex;flex-direction:column}
 .db.go:disabled{background:var(--acc);border-color:var(--acc);color:#fff}
 .db.warn{background:var(--warn);color:#fff;border-color:var(--warn)}
 .db.warn:hover{background:#C94A40;border-color:#C94A40;color:#fff}
+/* 지우기처럼 위험하지만 튀면 안 되는 버튼 — 평소엔 조용히, 올리면 경고색 */
+.db.danger{color:var(--ink3)}
+.db.danger:hover{border-color:var(--warn);color:var(--warn);background:transparent}
 
 /* ── 소스(무엇을 볼까) 선택 ── */
 .srcpick{display:flex;gap:6px}
@@ -67,6 +70,7 @@ body{display:flex;flex-direction:column}
 
 /* ── 카메라 ── */
 #panC .pb{display:flex;flex-direction:column;min-height:0}
+#camSel{max-width:340px}
 #camBox{position:relative;background:#0C1114;border-radius:10px;overflow:hidden;
   flex:0 0 auto;aspect-ratio:4/3;height:min(40vh,360px);width:auto;max-width:100%;margin:0 auto}
 #camVid{width:100%;height:100%;object-fit:contain;display:block;transform:scaleX(-1)}
@@ -241,7 +245,8 @@ body{display:flex;flex-direction:column}
   header h1 img{height:26px}
   .navlink{flex-shrink:0;padding:7px 12px;font-size:14px}
   #engine{display:none}
-  #langToggle{font-size:14px !important;padding:7px 11px !important}
+  #langToggle{font-size:14px !important;padding:7px 11px !important;margin-right:4px}
+  #camSel{max-width:none}
   #steps{padding:11px 12px}
   .stp{font-size:13.5px;gap:6px}
   .stp .cir{width:24px;height:24px;font-size:12.5px}
