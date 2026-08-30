@@ -54,7 +54,8 @@ lib/
 vendor/
   tasks-vision/      @mediapipe/tasks-vision wasm + vision_bundle.mjs
   tfjs/              @tensorflow/tfjs tf.min.js
-models/              hand / face / pose_lite .task 파일
+models/              hand / face / pose_lite .task
+                     + efficientdet_lite0(사물 감지) / selfie_segmenter(배경 분리) .tflite
 assets/fonts/        Pretendard (셀프호스팅)
 assets/img/          캐릭터·로고
 ```
