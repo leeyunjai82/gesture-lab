@@ -176,6 +176,28 @@ body{display:flex;flex-direction:column}
 .rule .op button.on{background:var(--acc-soft);border-color:var(--acc);color:var(--acc-ink)}
 .rule.fired{border-color:var(--acc);background:var(--acc-soft)}
 
+/* ── 순서 놀이 (순서도) ── */
+.seq-node{width:fit-content;margin:0 auto;padding:5px 16px;border-radius:999px;border:1px solid var(--line);
+  background:var(--panel2);font-size:11.5px;font-weight:700;color:var(--ink2)}
+.seq-node.goal.done{border-color:var(--ok);background:#EEF5EF;color:var(--ok)}
+.seq-arrow{width:0;height:16px;border-left:2px solid var(--line);margin:0 auto;position:relative}
+.seq-arrow::after{content:'';position:absolute;left:-5px;bottom:-1px;border:4px solid transparent;
+  border-top-color:var(--line)}
+.seq-step{border:1px solid var(--line);border-radius:9px;padding:8px 10px;transition:all .15s}
+.seq-step .top{display:flex;align-items:center;gap:7px}
+.seq-step .sq-idx{width:21px;height:21px;border-radius:50%;flex-shrink:0;display:flex;align-items:center;
+  justify-content:center;background:var(--line);color:#fff;font-size:11px;font-weight:700}
+.seq-step select{flex:1}
+.seq-step .del{border:0;background:none;color:var(--ink3);cursor:pointer;padding:2px 3px;font-size:11px}
+.seq-step .del:hover{color:var(--warn)}
+.seq-step .sq-track{height:5px;border-radius:3px;background:var(--line-soft);overflow:hidden;margin-top:7px}
+.seq-step .sq-fill{height:100%;width:0;background:var(--acc);border-radius:3px;transition:width .1s linear}
+.seq-step.cur{border-color:var(--acc);background:var(--acc-soft)}
+.seq-step.cur .sq-idx{background:var(--acc)}
+.seq-step.done{border-color:var(--ok)}
+.seq-step.done .sq-idx{background:var(--ok)}
+.seq-step.done .sq-fill{background:var(--ok)}
+
 /* ── 보관함 표 ── */
 #stTable{width:100%;border-collapse:collapse;font-size:12px}
 #stTable th{text-align:left;font-size:11px;color:var(--ink3);font-weight:700;padding:7px 9px;

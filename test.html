@@ -5,11 +5,11 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>제스처 랩 — 시험실</title>
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="stylesheet" href="assets/fonts/pretendard.css?v=4">
-<link rel="stylesheet" href="css/all.min.css?v=4">
-<link rel="stylesheet" href="css/ui.css?v=4">
-<link rel="stylesheet" href="css/theme-maker.css?v=4">
-<link rel="stylesheet" href="css/app.css?v=4">
+<link rel="stylesheet" href="assets/fonts/pretendard.css?v=5">
+<link rel="stylesheet" href="css/all.min.css?v=5">
+<link rel="stylesheet" href="css/ui.css?v=5">
+<link rel="stylesheet" href="css/theme-maker.css?v=5">
+<link rel="stylesheet" href="css/app.css?v=5">
 </head>
 <body>
 
@@ -18,6 +18,7 @@
 <div class="modes">
   <button class="db on" id="modeSingle"><i class="fa-solid fa-circle-check"></i> 하나 시험하기</button>
   <button class="db" id="modeCombo"><i class="fa-solid fa-layer-group"></i> 묶어서 시험하기</button>
+  <button class="db" id="modeSeq"><i class="fa-solid fa-arrow-down-1-9"></i> 순서 놀이</button>
   <span style="flex:1"></span>
   <span style="font-size:11px;color:var(--ink3);font-weight:600;align-self:center" id="modeHint">배운 모델 1개를 시험해요</span>
 </div>
@@ -89,6 +90,20 @@
           <i class="fa-solid fa-plus"></i> 규칙 더하기
         </button>
       </div>
+
+      <div id="seqOut" style="display:none">
+        <div class="pb-label" style="margin-bottom:2px">순서도</div>
+        <div class="hint" style="margin-top:2px">순서대로 동작을 하면 한 칸씩 내려가요.</div>
+        <div id="seqFlow"></div>
+        <div class="row" style="margin-top:9px">
+          <button class="db" id="seqAdd" style="flex:1;justify-content:center">
+            <i class="fa-solid fa-plus"></i> 단계 더하기
+          </button>
+          <button class="db" id="seqReset" style="flex:1;justify-content:center">
+            <i class="fa-solid fa-rotate-left"></i> 처음부터
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -96,9 +111,9 @@
 
 <div id="toast"></div>
 
-<script src="lib/nav.js?v=4"></script>
-<script src="lib/i18n.js?v=4"></script>
+<script src="lib/nav.js?v=5"></script>
+<script src="lib/i18n.js?v=5"></script>
 <script src="vendor/tfjs/tf.min.js"></script>
-<script type="module" src="lib/exam.js?v=4"></script>
+<script type="module" src="lib/exam.js?v=5"></script>
 </body>
 </html>
