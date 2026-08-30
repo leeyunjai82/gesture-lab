@@ -206,7 +206,7 @@ body{display:flex;flex-direction:column}
   .pan > .pb{overflow-y:visible}
   #panL,#panR{width:100%}
   #panC{flex:1 1 auto}
-  #camBox{width:100%;height:auto;max-height:none;min-height:220px}
+  #camBox{width:100%;height:auto;max-height:none}
   .thumbs{max-height:96px}
 }
 
