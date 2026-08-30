@@ -80,8 +80,9 @@ selfie_segmenter, yamnet).
 ## 배포 (파이보 랩과 동일)
 
 - `main` 에 작업 → GitHub Pages 테스트 → 통과하면 `release` 브랜치 머지 → Cloudflare 자동 배포
-- Cloudflare 는 Workers 방식: `wrangler.toml` + `.assetsignore` + `src/index.js`
+- Cloudflare 는 Workers 방식: `wrangler.toml` + `.assetsignore` (잠금 없음 — 자산만 서빙)
 - 배포 명령: `npx wrangler deploy`
-- 시험 기간 잠금: `npx wrangler secret put BASIC_USER` / `BASIC_PASS` (둘 다 설정될 때만 켜짐)
+- 잠금이 다시 필요하면 파이보 랩의 시험 기간 커밋처럼
+  `main`/`run_worker_first` + Basic Auth 워커(`src/index.js`)를 되살립니다
 - 캐시 버스팅: 코드 파일만 `?v=N`. 모델·wasm 파일에는 붙이지 않습니다
 - 모든 자산 경로는 상대경로 — 하위 경로(`/gesture-lab/`) 서빙에서도 동작합니다
