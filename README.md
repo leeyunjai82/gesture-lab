@@ -1,8 +1,8 @@
-# Gesture Lab
+# Sense Lab
 
-**Teach an AI your own moves — right in the browser.**
+**Teach an AI to see and hear you — right in the browser.**
 
-Gesture Lab is a classroom web app for kids. Point the webcam at yourself,
+Sense Lab is a classroom web app for kids. Point the webcam at yourself,
 collect examples of your hand signs, faces, or body poses, and train a small
 AI in about one second. Then test it, build rules with it, and play a
 step-by-step gesture game.
@@ -80,11 +80,11 @@ PCs that reset on reboot.
 
 ---
 
-# 제스처 랩
+# 센스 랩
 
-**브라우저에서 바로, 나만의 동작을 AI에게 가르쳐요.**
+**브라우저에서 바로, 나의 몸짓과 소리를 AI에게 가르쳐요.**
 
-제스처 랩은 어린이를 위한 수업용 웹앱입니다. 웹캠 앞에서 손 모양·표정·몸
+센스 랩은 어린이를 위한 수업용 웹앱입니다. 웹캠 앞에서 손 모양·표정·몸
 동작의 예시를 모으면, 약 1초 만에 작은 AI가 학습됩니다. 배운 모델을
 시험하고, 규칙으로 엮고, 순서 놀이로 게임도 만들 수 있습니다.
 

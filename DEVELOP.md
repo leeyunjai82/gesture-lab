@@ -85,4 +85,4 @@ selfie_segmenter, yamnet).
 - 잠금이 다시 필요하면 파이보 랩의 시험 기간 커밋처럼
   `main`/`run_worker_first` + Basic Auth 워커(`src/index.js`)를 되살립니다
 - 캐시 버스팅: 코드 파일만 `?v=N`. 모델·wasm 파일에는 붙이지 않습니다
-- 모든 자산 경로는 상대경로 — 하위 경로(`/gesture-lab/`) 서빙에서도 동작합니다
+- 모든 자산 경로는 상대경로 — 하위 경로(`/sense-lab/`) 서빙에서도 동작합니다

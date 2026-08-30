@@ -1,6 +1,6 @@
 {
-  "name": "제스처 랩",
-  "short_name": "제스처 랩",
+  "name": "센스 랩",
+  "short_name": "센스 랩",
   "description": "웹캠으로 몸의 좌표를 모아 AI를 직접 가르쳐 보는 수업용 웹앱",
   "start_url": "./index.html",
   "scope": "./",
