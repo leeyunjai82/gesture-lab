@@ -51,8 +51,7 @@ lib/
 vendor/
   tasks-vision/      @mediapipe/tasks-vision wasm + vision_bundle.mjs
   tfjs/              @tensorflow/tfjs tf.min.js
-models/              hand / face / pose_lite .task
-                     + efficientdet_lite0(사물) / selfie_segmenter(배경) .tflite
+models/              hand / face / pose_lite .task + selfie_segmenter(배경) .tflite
 assets/fonts/        Pretendard (셀프호스팅)
 assets/img/          캐릭터·로고·앱 아이콘
 docs/                README 용 화면 캡처
@@ -70,7 +69,7 @@ cp node_modules/@tensorflow/tfjs/dist/tf.min.js       vendor/tfjs/
 
 `.task`/`.tflite` 모델은 MediaPipe 공식 모델 저장소에서 받아 `models/` 에 둡니다
 (hand_landmarker, face_landmarker, pose_landmarker_lite — 포즈는 lite 고정,
-efficientdet_lite0, selfie_segmenter).
+selfie_segmenter).
 `node_modules` 는 커밋하지 않고, 벤더 파일은 커밋합니다.
 
 ## 배포 (파이보 랩과 동일)

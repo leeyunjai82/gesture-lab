@@ -37,8 +37,8 @@ coordinates — kids can see that the AI learns from numbers, not photos.
 For each source, pick one of:
 
 - **Just watch** — no training needed. The AI already knows finger counts,
-  face distance and direction, mouth open / smiling, hands up, and everyday
-  **objects** (cup, book, ball, …). Great as a first hands-on demo.
+  face distance and direction, mouth open / smiling, and hands up.
+  Great as a first hands-on demo.
 - **My model** — test what you taught. All class probabilities show as
   bars, and the **"How sure"** slider decides when the AI says
   *"Not sure"* instead of guessing.
@@ -109,8 +109,8 @@ PCs that reset on reboot.
 소스마다 하나를 고릅니다:
 
 - **그냥 보기** — 학습 없이 바로 보여요. 손가락 개수, 얼굴 거리와 방향,
-  입 벌리기/웃기, 손 들기, 그리고 컵·책·공 같은 **사물**까지 AI가 이미
-  알고 있어요. 첫 체험용으로 좋습니다.
+  입 벌리기/웃기, 손 들기를 AI가 이미 알고 있어요. 첫 체험용으로
+  좋습니다.
 - **내 모델** — 학습실에서 가르친 모델을 시험해요. 종류별 확률이 막대로
   나오고, **확신 정도** 슬라이더보다 덜 확실하면 *"모르겠어요"* 라고
   답합니다.
