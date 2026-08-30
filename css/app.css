@@ -27,6 +27,7 @@ body{display:flex;flex-direction:column}
 #panC{flex:1}
 #panR{width:320px;flex-shrink:0}
 
+.pb-label{font-size:11px;font-weight:700;color:var(--ink3);margin-bottom:6px}
 .row{display:flex;gap:6px}
 .inp{flex:1;min-width:0;border:1px solid var(--line);background:var(--panel2);
   border-radius:7px;padding:6px 9px;font-size:12px;font-family:inherit;color:var(--ink);outline:none}
@@ -158,24 +159,6 @@ body{display:flex;flex-direction:column}
 .srcstate .sv.idk,.srcstate .sv.none{color:var(--ink3);font-weight:600}
 .srcstate .sp2{font-size:10.5px;color:var(--ink3);flex-shrink:0;font-variant-numeric:tabular-nums}
 
-/* ── 출력 장치 (LED / 말하기) ── */
-#device{display:flex;align-items:center;gap:10px;padding:9px 12px;border:1px solid var(--line);
-  border-radius:10px;background:var(--panel2);margin-bottom:11px}
-#device .dv-lb{font-size:11px;font-weight:700;color:var(--ink2);flex-shrink:0}
-#device .led{width:22px;height:22px;border-radius:50%;background:#C7D3D9;border:2px solid var(--line);
-  flex-shrink:0;transition:background .15s,box-shadow .15s}
-#device .led.on{border-color:rgba(0,0,0,.12)}
-#device .spk{width:26px;height:26px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  color:var(--ink3);font-size:12px;flex-shrink:0;transition:color .15s}
-#device .spk.on{color:var(--acc-ink);animation:spk-pulse .6s ease-in-out infinite}
-@keyframes spk-pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.25)}}
-#device .dv-hint{font-size:10.5px;color:var(--ink3);font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.react-row{display:flex;align-items:center;gap:6px;margin-top:6px}
-.react-row .rn{width:64px;flex-shrink:0;font-size:11.5px;font-weight:700;color:var(--ink);
-  overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
-.react-row select{flex:0 0 84px}
-.react-row input{flex:1;min-width:0}
-
 /* ── 규칙표 ── */
 .rule{border:1px solid var(--line);border-radius:9px;padding:9px 10px;margin-top:8px}
 .rule .rtop{display:flex;align-items:center;gap:6px;margin-bottom:7px}
@@ -228,18 +211,66 @@ body{display:flex;flex-direction:column}
 }
 
 @media (max-width:700px){
+  /* 폰에서는 전체 글자를 한 단계 키운다. 입력칸은 16px — iOS 포커스 확대 방지 */
+  body{font-size:15px}
   header{overflow-x:auto;padding:0 10px;gap:6px;scrollbar-width:none}
   header::-webkit-scrollbar{display:none}
-  header h1{font-size:14px;padding-right:8px;flex-shrink:0}
-  header h1 img{height:24px}
-  .navlink{flex-shrink:0;padding:6px 11px}
+  header h1{font-size:16px;padding-right:8px;flex-shrink:0}
+  header h1 img{height:26px}
+  .navlink{flex-shrink:0;padding:7px 12px;font-size:14px}
   #engine{display:none}
+  #langToggle{font-size:14px !important;padding:7px 11px !important}
+  #steps{padding:11px 12px}
+  .stp{font-size:13.5px;gap:6px}
+  .stp .cir{width:24px;height:24px;font-size:12.5px}
   .modes{flex-wrap:wrap;padding:9px 10px}
+  .modes .db{font-size:14px;padding:9px 13px}
   #modeHint{display:none}
   #glMain{padding:8px;gap:8px}
-  .pan > .pb{padding:10px}
-  .answer{font-size:16px}
-  .srcpick .db{padding:9px 4px;font-size:12px}
-  #stTable th,#stTable td{padding:6px 6px}
-  .dropzone{padding:14px}
+  .pan > .ph{font-size:14.5px;padding:12px 13px}
+  .pan > .pb{padding:11px}
+  .db{font-size:14px;padding:9px 13px}
+  .srcpick .db{padding:11px 4px;font-size:14px}
+  .inp,select.inp,.params input{font-size:16px;padding:9px 11px}
+  .hint{font-size:13px;line-height:1.65}
+  .cls{padding:11px 12px}
+  .cls .nm{font-size:14.5px}
+  .cls .ct{font-size:12.5px}
+  .thumbs img{width:40px;height:40px}
+  .selinfo{font-size:14px;padding:10px}
+  #capBtn,#trainBtn{font-size:15px;padding:13px}
+  .privnote{font-size:12.5px}
+  #numsHead{font-size:13px}
+  #numsHead .st-badge{font-size:12px}
+  #numsBox table{font-size:12px}
+  #numsEmpty{font-size:12.5px}
+  .prg .lb{font-size:12.5px}
+  .chart-legend{font-size:12px}
+  .accbig{font-size:26px}
+  .accbig small{font-size:13px}
+  #cmWrap table{font-size:12.5px}
+  #cmWrap td{min-width:40px;height:30px}
+  .cm-note{font-size:12px}
+  .sec2 .st{font-size:12.5px}
+  .pb-label{font-size:13px}
+  .mradio{padding:11px 12px;font-size:13.5px}
+  .mradio .nm{font-size:14.5px}
+  .mradio .mt{font-size:12px}
+  .thr .lb{font-size:13px}
+  input[type=range]::-webkit-slider-thumb{width:20px;height:20px}
+  .answer{font-size:20px;min-height:60px}
+  .bar .bl{font-size:13px}
+  .bar .bt{height:10px}
+  .srcstate{font-size:13.5px;padding:9px 10px}
+  .srcstate .sp2{font-size:12px}
+  .rule{padding:11px 12px}
+  .rcond{font-size:13.5px}
+  .rcond .sn{width:46px}
+  .rule .op .lb2{font-size:12px}
+  .rule .op button{font-size:12.5px;padding:6px 13px}
+  #stTable{font-size:13.5px}
+  #stTable th{font-size:12px;padding:8px 7px}
+  #stTable td{padding:9px 7px}
+  .dropzone{padding:16px;font-size:13.5px}
+  #toast{font-size:14px}
 }
