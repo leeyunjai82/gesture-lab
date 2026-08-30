@@ -214,6 +214,25 @@ body{display:flex;flex-direction:column}
   color:var(--ink3);font-size:12px;font-weight:600;margin-top:12px;transition:all .15s;cursor:pointer}
 .dropzone:hover,.dropzone.over{border-color:var(--acc);color:var(--acc-ink);background:var(--acc-soft)}
 
+/* ── 튜토리얼 (파이보 말풍선 안내) ── */
+.tour{position:fixed;inset:0;z-index:300}
+.tour-spot{position:fixed;border-radius:10px;pointer-events:none;
+  border:2px solid var(--acc);
+  box-shadow:0 0 0 9999px rgba(42,38,32,.45);   /* 구멍 뚫린 어두운 막 */
+  transition:all .25s ease}
+.tour-bubble{position:fixed;background:var(--panel);border:1px solid var(--line);
+  border-radius:12px;box-shadow:0 8px 24px rgba(42,38,32,.25);padding:13px 14px 11px;
+  display:flex;flex-wrap:wrap;gap:10px;align-items:flex-start;transition:all .25s ease}
+.tour-char{width:52px;height:auto;flex-shrink:0}
+.tour-text{flex:1;min-width:0;font-size:13.5px;font-weight:600;color:var(--ink);
+  line-height:1.65;white-space:pre-line;padding-top:2px}
+.tour-foot{width:100%;display:flex;align-items:center;gap:6px;margin-top:2px}
+.tour-dots{flex:1;display:flex;gap:4px;align-items:center}
+.tour-dots .dot{width:6px;height:6px;border-radius:50%;background:var(--line-soft)}
+.tour-dots .dot.on{background:var(--acc)}
+.tour-skip{font-size:11.5px;padding:5px 9px}
+.tour-next{font-size:12.5px;padding:5px 14px}
+
 /* ── 토스트 (분류툴과 동일) ── */
 #toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%);z-index:200;
   background:#233642;color:#fff;font-size:12.5px;font-weight:600;padding:10px 18px;border-radius:9px;
