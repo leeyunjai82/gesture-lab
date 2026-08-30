@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>제스처 랩 — 시험실</title>
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="stylesheet" href="assets/fonts/pretendard.css?v=1">
+<link rel="stylesheet" href="css/all.min.css?v=1">
+<link rel="stylesheet" href="css/ui.css?v=1">
+<link rel="stylesheet" href="css/theme-maker.css?v=1">
+<link rel="stylesheet" href="css/app.css?v=1">
+</head>
+<body>
+
+<header data-tab="test.html"></header>
+
+<div class="modes">
+  <button class="db on" id="modeSingle"><i class="fa-solid fa-circle-check"></i> 하나 시험하기</button>
+  <button class="db" id="modeCombo"><i class="fa-solid fa-layer-group"></i> 묶어서 시험하기</button>
+  <span style="flex:1"></span>
+  <span style="font-size:11px;color:var(--ink3);font-weight:600;align-self:center" id="modeHint">배운 모델 1개를 시험해요</span>
+</div>
+
+<div id="glMain">
+
+  <div class="pan" id="panL">
+    <div class="ph"><i class="fa-solid fa-box-open"></i>모델 고르기</div>
+    <div class="pb">
+      <div id="sglPick">
+        <div id="mdlList"></div>
+        <div class="hint" id="mdlEmpty" style="display:none">
+          아직 저장한 모델이 없어요.<br>
+          <a href="index.html" style="color:var(--acc-ink)">학습실</a>에서 만들어 보세요.
+        </div>
+      </div>
+
+      <div id="cmbPick" style="display:none">
+        <div class="hint" style="margin-top:0;margin-bottom:4px">보는 것마다 모델을 골라요. 최대 3개예요.</div>
+        <div class="rcond" style="margin-top:8px"><span class="sn">손</span>
+          <select class="inp" id="slotHand"></select></div>
+        <div class="rcond" style="margin-top:6px"><span class="sn">얼굴</span>
+          <select class="inp" id="slotFace"></select></div>
+        <div class="rcond" style="margin-top:6px"><span class="sn">포즈</span>
+          <select class="inp" id="slotPose"></select></div>
+      </div>
+
+      <div class="thr">
+        <div class="lb"><span>확신 정도</span><span class="num" id="thrVal">70%</span></div>
+        <input type="range" id="thrSlider" min="30" max="95" value="70" step="5">
+        <div class="hint" style="margin-top:5px">이보다 덜 확실하면 "모르겠어요"라고 답해요.</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="pan" id="panC">
+    <div class="ph"><i class="fa-solid fa-camera"></i>카메라</div>
+    <div class="pb">
+      <div class="row" style="margin-bottom:10px">
+        <button class="db" id="camBtn" style="flex-shrink:0"><i class="fa-solid fa-video"></i> 카메라 켜기</button>
+        <select class="inp" id="camSel" style="cursor:pointer"></select>
+      </div>
+      <div id="camBox">
+        <video id="camVid" playsinline muted></video>
+        <canvas id="ovCv"></canvas>
+        <div id="camOff"><i class="fa-solid fa-video-slash fa-2x"></i><span>카메라가 꺼져 있어요</span></div>
+      </div>
+      <div class="privnote"><i class="fa-solid fa-lock"></i> 찍은 영상은 이 컴퓨터 밖으로 나가지 않아요</div>
+
+      <div id="srcStates" style="margin-top:10px;display:none"></div>
+    </div>
+  </div>
+
+  <div class="pan" id="panR">
+    <div class="ph" id="ansHead"><i class="fa-solid fa-wand-magic-sparkles"></i>AI의 답</div>
+    <div class="pb">
+      <div class="answer idk" id="answer">모델을 골라 주세요</div>
+
+      <div id="device">
+        <span class="dv-lb">출력 장치</span>
+        <span class="led" id="ledLamp" title="LED"></span>
+        <span class="spk" id="spkIcon" title="말하기"><i class="fa-solid fa-volume-high"></i></span>
+        <span class="dv-hint">답이 나오면 여기가 움직여요</span>
+      </div>
+
+      <div id="sglOut">
+        <div id="bars"></div>
+        <div class="hint" id="barsHint" style="display:none">막대가 길수록 AI가 그 답을 확신하는 거예요.</div>
+        <div class="sec2" id="sglReactSec" style="display:none">
+          <div class="st">반응 만들기</div>
+          <div class="hint" style="margin-top:0;margin-bottom:4px">답이 나오면 불을 켜고 말을 해요.</div>
+          <div id="sglReact"></div>
+        </div>
+      </div>
+
+      <div id="cmbOut" style="display:none">
+        <div class="st" style="font-size:11px;font-weight:700;color:var(--ink3);
+          text-transform:uppercase;letter-spacing:.04em;margin-bottom:2px">규칙표</div>
+        <div class="hint" style="margin-top:2px">조건이 맞으면 위의 답이 나와요. 위에 있는 규칙부터 봐요.</div>
+        <div id="ruleList"></div>
+        <button class="db" id="ruleAdd" style="width:100%;justify-content:center;margin-top:9px">
+          <i class="fa-solid fa-plus"></i> 규칙 더하기
+        </button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div id="toast"></div>
+
+<script src="lib/nav.js?v=1"></script>
+<script src="lib/i18n.js?v=1"></script>
+<script src="vendor/tfjs/tf.min.js"></script>
+<script type="module" src="lib/exam.js?v=1"></script>
+</body>
+</html>
