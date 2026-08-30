@@ -6,11 +6,11 @@
 <title>제스처 랩 — 학습실</title>
 <meta name="description" content="웹캠으로 몸의 좌표를 모아 AI를 직접 가르쳐 보세요.">
 <link rel="icon" type="image/png" href="assets/img/favicon.png">
-<link rel="stylesheet" href="assets/fonts/pretendard.css?v=5">
-<link rel="stylesheet" href="css/all.min.css?v=5">
-<link rel="stylesheet" href="css/ui.css?v=5">
-<link rel="stylesheet" href="css/theme-maker.css?v=5">
-<link rel="stylesheet" href="css/app.css?v=5">
+<link rel="stylesheet" href="assets/fonts/pretendard.css?v=6">
+<link rel="stylesheet" href="css/all.min.css?v=6">
+<link rel="stylesheet" href="css/ui.css?v=6">
+<link rel="stylesheet" href="css/theme-maker.css?v=6">
+<link rel="stylesheet" href="css/app.css?v=6">
 </head>
 <body>
 
@@ -72,7 +72,8 @@
 
       <div id="numsWrap">
         <div id="numsHead"><i class="fa-solid fa-table-list"></i>AI가 보는 숫자
-          <span class="st-badge" id="numsState">안 보여요</span></div>
+          <span class="st-badge" id="numsState">안 보여요</span>
+          <span class="st-badge" id="faceSigLine" style="display:none;margin-left:auto;color:var(--acc-ink)"></span></div>
         <div id="numsBox">
           <div id="numsEmpty">카메라를 켜면 숫자가 나와요</div>
           <table id="numsTable" style="display:none"></table>
@@ -126,9 +127,9 @@
 
 <div id="toast"></div>
 
-<script src="lib/nav.js?v=5"></script>
-<script src="lib/i18n.js?v=5"></script>
+<script src="lib/nav.js?v=6"></script>
+<script src="lib/i18n.js?v=6"></script>
 <script src="vendor/tfjs/tf.min.js"></script>
-<script type="module" src="lib/learn.js?v=5"></script>
+<script type="module" src="lib/learn.js?v=6"></script>
 </body>
 </html>
