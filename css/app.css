@@ -269,9 +269,12 @@ body{display:flex;flex-direction:column}
   #langToggle{font-size:13px !important;padding:6px 8px !important;min-width:38px !important;margin-right:0}
   .hbtn{width:30px;height:30px;font-size:12px}
   #camSel{max-width:none}
-  #steps{padding:11px 12px}
-  .stp{font-size:13.5px;gap:6px}
-  .stp .cir{width:24px;height:24px;font-size:12.5px}
+  /* 단계 표시줄: 스크롤 대신 폭에 맞춰 축소 */
+  #steps{padding:10px 8px;overflow:visible;justify-content:space-between}
+  #steps .stpline{min-width:4px}
+  .stp{font-size:12px;gap:4px}
+  .stp .cir{width:20px;height:20px;font-size:11px}
+  .stpline{margin:0 4px}
   .modes{flex-wrap:wrap;padding:9px 10px}
   .modes .db{font-size:14px;padding:9px 13px}
   #modeHint{display:none}
@@ -339,4 +342,7 @@ body{display:flex;flex-direction:column}
 @media (max-width:365px){
   /* 초소형: 로고만 남기고 서비스명 글자를 접는다 */
   header h1 .brand-txt{display:none}
+  .stp{font-size:11px;gap:3px}
+  .stp .cir{width:18px;height:18px;font-size:10px}
+  .stpline{margin:0 3px}
 }
