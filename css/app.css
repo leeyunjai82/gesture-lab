@@ -324,13 +324,18 @@ body{display:flex;flex-direction:column}
 }
 
 @media (max-width:420px){
-  /* 아주 좁은 폰: 로고 그림을 접고 여백을 더 조여 한 줄에 맞춘다.
+  /* 아주 좁은 폰: 로고(시그니처)는 남기고 여백을 더 조인다.
      그래도 안 되는 초소형 화면만 가로 스크롤로 넘긴다 */
-  header{margin:4px 4px 0;padding:0 6px;gap:3px;overflow-x:auto;scrollbar-width:none}
+  header{margin:4px 4px 0;padding:0 6px;gap:2px;overflow-x:auto;scrollbar-width:none}
   header::-webkit-scrollbar{display:none}
-  header h1 img{display:none}
-  header h1{font-size:14px;padding-right:4px}
-  html body .navlink{padding:6px 5px 4px;font-size:13px}
+  header h1 img{height:22px}
+  header h1{font-size:13.5px;padding-right:3px;gap:5px}
+  html body .navlink{padding:6px 4px 4px;font-size:13px}
   #langToggle{min-width:34px !important;padding:6px 6px !important}
   .hbtn{width:28px;height:28px;flex-shrink:0}
+}
+
+@media (max-width:365px){
+  /* 초소형: 로고만 남기고 서비스명 글자를 접는다 */
+  header h1 .brand-txt{display:none}
 }
