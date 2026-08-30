@@ -239,13 +239,15 @@ body{display:flex;flex-direction:column}
 @media (max-width:700px){
   /* 폰에서는 전체 글자를 한 단계 키운다. 입력칸은 16px — iOS 포커스 확대 방지 */
   body{font-size:15px}
-  header{overflow-x:auto;padding:0 10px;gap:6px;scrollbar-width:none}
-  header::-webkit-scrollbar{display:none}
-  header h1{font-size:16px;padding-right:8px;flex-shrink:0}
-  header h1 img{height:26px}
-  .navlink{flex-shrink:0;padding:7px 12px;font-size:14px}
+  /* 헤더는 스크롤 대신 크기를 줄여 한 줄에 맞춘다 */
+  header{margin:6px 6px 0;padding:0 8px;gap:4px}
+  header h1{font-size:15px;padding-right:6px;flex-shrink:0;letter-spacing:0}
+  header h1 img{height:24px}
+  /* theme-maker.css 가 html body .navlink 로 높게 걸어 두므로 같은 특이성으로 좁힌다 */
+  html body .navlink{flex-shrink:0;padding:6px 9px 4px;font-size:13.5px}
   #engine{display:none}
-  #langToggle{font-size:14px !important;padding:7px 11px !important;margin-right:4px}
+  #langToggle{font-size:13px !important;padding:6px 8px !important;min-width:38px !important;margin-right:0}
+  .hbtn{width:30px;height:30px;font-size:12px}
   #camSel{max-width:none}
   #steps{padding:11px 12px}
   .stp{font-size:13.5px;gap:6px}
@@ -300,4 +302,16 @@ body{display:flex;flex-direction:column}
   #stTable td{padding:9px 7px}
   .dropzone{padding:16px;font-size:13.5px}
   #toast{font-size:14px}
+}
+
+@media (max-width:420px){
+  /* 아주 좁은 폰: 로고 그림을 접고 여백을 더 조여 한 줄에 맞춘다.
+     그래도 안 되는 초소형 화면만 가로 스크롤로 넘긴다 */
+  header{margin:4px 4px 0;padding:0 6px;gap:3px;overflow-x:auto;scrollbar-width:none}
+  header::-webkit-scrollbar{display:none}
+  header h1 img{display:none}
+  header h1{font-size:14px;padding-right:4px}
+  html body .navlink{padding:6px 5px 4px;font-size:13px}
+  #langToggle{min-width:34px !important;padding:6px 6px !important}
+  .hbtn{width:28px;height:28px;flex-shrink:0}
 }
