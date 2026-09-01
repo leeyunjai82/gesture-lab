@@ -4,6 +4,11 @@ on:
   push:
     tags: ['v*']        # 예: git tag v0.1.0 && git push origin v0.1.0
   workflow_dispatch:     # Actions 탭에서 수동 실행도 가능
+    inputs:
+      tag:
+        description: '릴리스 태그 (예: v0.1.0). 비우면 릴리스 없이 빌드만'
+        required: false
+        default: ''
 
 jobs:
   build:
@@ -42,8 +47,9 @@ jobs:
           name: SenseLab
           path: build/SenseLab.exe
 
-      - name: Attach to Release (태그 push 시)
-        if: startsWith(github.ref, 'refs/tags/')
+      - name: Attach to Release (태그 push 또는 tag 입력 시)
+        if: startsWith(github.ref, 'refs/tags/') || inputs.tag != ''
         uses: softprops/action-gh-release@v2
         with:
           files: build/SenseLab.exe
+          tag_name: ${{ inputs.tag || github.ref_name }}
