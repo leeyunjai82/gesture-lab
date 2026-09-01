@@ -86,3 +86,16 @@ selfie_segmenter, yamnet).
   `main`/`run_worker_first` + Basic Auth 워커(`src/index.js`)를 되살립니다
 - 캐시 버스팅: 코드 파일만 `?v=N`. 모델·wasm 파일에는 붙이지 않습니다
 - 모든 자산 경로는 상대경로 — 하위 경로(`/sense-lab/`) 서빙에서도 동작합니다
+
+## 오프라인 exe (파이보 랩과 동일)
+
+`v*` 태그를 푸시하면 GitHub Actions 가 사이트 전체를 담은 단일
+`SenseLab.exe` 를 빌드해 Release 에 첨부합니다 (인터넷 없이 동작).
+
+```bash
+git tag v0.1.0 && git push origin v0.1.0
+```
+
+- 구성: `.github/workflows/build-exe.yml` + `tools/portable/` (Go embed 서버)
+- 서버는 `.wasm`/`.task`/`.tflite`/`.mjs` MIME 을 명시 등록합니다
+- Actions 탭에서 workflow_dispatch 로 수동 빌드도 가능합니다
